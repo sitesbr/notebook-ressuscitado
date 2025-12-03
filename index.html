@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook Resurrection | O Fim do Notebook Lento</title>
+    <meta name="description" content="Recupere seu notebook antigo com Linux. Curso prático para máquinas com 2GB de RAM. Pare de sofrer com travamentos.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',    // Slate 900
+                            purple: '#4c1d95',  // Violet 900 base
+                            neon: '#8b5cf6',    // Violet 500 highlight
+                            cyan: '#06b6d4',    // Cyan 500 (Botões)
+                            cyanhover: '#0891b2' // Cyan 600
+                        } 
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(139, 92, 246, 0.3)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Efeito de Gradiente Animado no Hero (Opcional) */
+        .hero-bg {
+            background: radial-gradient(circle at top right, #4c1d95 0%, #0f172a 40%, #000000 100%);
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+    <header class="hero-bg text-white pt-20 pb-24 lg:pt-32 lg:pb-40 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-indigo-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-200 text-sm font-medium">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                        </span>
+                        Método validado para 2GB de RAM
+                    </div>
+                    
+                    <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Transforme seu <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">notebook velho</span> em uma máquina útil.
+                    </h1>
+                    
+                    <p class="text-lg lg:text-xl text-gray-300 max-w-lg leading-relaxed">
+                        Mesmo que ele leve “uma vida” pra ligar. Aprenda a rodar YouTube, Meet e tarefas do dia a dia sem travar, usando Linux.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#pricing" class="inline-flex justify-center items-center px-8 py-4 text-lg font-bold text-white bg-brand-cyan hover:bg-brand-cyanhover rounded-full transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(6,182,212,0.4)]">
+                            Quero ressuscitar meu notebook
+                            <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </a>
+                        <a href="#how-it-works" class="inline-flex justify-center items-center px-8 py-4 text-lg font-medium text-gray-300 hover:text-white transition-colors border border-white/10 hover:border-white/30 rounded-full">
+                            Ver como funciona
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative lg:h-[500px] w-full flex items-center justify-center">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pessoa usando notebook com luzes neon" class="object-cover w-full h-full transform transition duration-700 group-hover:scale-105 opacity-90 hover:opacity-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-left">
+                            <p class="text-cyan-400 font-mono text-sm mb-1">> system_check: OK</p>
+                            <p class="text-white font-bold text-xl">Recuperado com Sucesso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12">Você passa por isso todo dia?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Eternidade para ligar</h3>
+                    <p class="text-gray-600 text-sm">Você liga o notebook, vai fazer um café, volta e ele ainda está carregando o Windows.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="video-off" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Vídeo Engasgando</h3>
+                    <p class="text-gray-600 text-sm">YouTube e Google Meet travam a cada 3 segundos. Impossível estudar ou trabalhar.</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Navegador Pesado</h3>
+                    <p class="text-gray-600 text-sm">Abriu 3 abas? O sistema congela e a ventoinha parece que vai decolar.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-blue-50 p-8 rounded-3xl border border-blue-100">
+                <p class="text-lg text-blue-900 font-medium">
+                    "O problema quase nunca é 'só porque ele é velho demais'. É o software errado para o hardware que você tem."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-purple font-bold tracking-wider uppercase text-sm">O Método Completo</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">O que você vai aprender no curso</h2>
+                <p class="text-gray-600 mt-4">5 Módulos práticos, passo a passo, do zero ao notebook rápido.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-purple/30 transition-all group">
+                    <div class="text-5xl font-black text-gray-100 group-hover:text-brand-purple/10 transition-colors mb-4">01</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="search" class="w-5 h-5 text-brand-purple"></i> Diagnóstico
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Aprenda a abrir, limpar e identificar gargalos reais (HD, RAM ou temperatura) sem quebrar nada.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-purple/30 transition-all group">
+                    <div class="text-5xl font-black text-gray-100 group-hover:text-brand-purple/10 transition-colors mb-4">02</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="cpu" class="w-5 h-5 text-brand-purple"></i> Upgrade Essencial
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Descubra quando vale a pena colocar SSD ou RAM e como gastar pouco com peças usadas e compatíveis.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-purple/30 transition-all group">
+                    <div class="text-5xl font-black text-gray-100 group-hover:text-brand-purple/10 transition-colors mb-4">03</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="monitor" class="w-5 h-5 text-brand-purple"></i> O Linux Certo
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Xubuntu? Linux Lite? AntiX? Saiba qual sistema roda liso na SUA configuração específica.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-purple/30 transition-all group">
+                    <div class="text-5xl font-black text-gray-100 group-hover:text-brand-purple/10 transition-colors mb-4">04</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5 text-brand-purple"></i> Instalação Segura
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Backup, particionamento e instalação passo a passo. Configuramos Wi-Fi, som e impressoras.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-purple/30 transition-all group">
+                    <div class="text-5xl font-black text-gray-100 group-hover:text-brand-purple/10 transition-colors mb-4">05</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="rocket" class="w-5 h-5 text-brand-purple"></i> Otimização Pós
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Ajustes finos (zram, VA-API) para navegar na internet e ver vídeos sem travamentos.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-brand-purple to-indigo-800 p-8 rounded-2xl shadow-lg text-white transform md:scale-105">
+                    <div class="flex items-center gap-2 mb-4 bg-white/20 w-fit px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                        Bônus Exclusivo
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Estudo de Caso Real</h3>
+                    <p class="text-indigo-100 text-sm leading-relaxed mb-6">Veja meu notebook de 2GB de RAM rodando tudo na prática. Prova real de que o método funciona.</p>
+                    <i data-lucide="play-circle" class="w-10 h-10 text-cyan-400"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-cyan transform translate-x-4 translate-y-4 rounded-2xl"></div>
+                        <img src="https://via.placeholder.com/400x500?text=Foto+do+Autor" alt="Franklin - Instrutor" class="relative rounded-2xl shadow-xl w-full object-cover">
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 space-y-6">
+                    <h2 class="text-3xl font-bold text-gray-900">Quem vai te guiar?</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Fala, aqui é o <strong>Franklin</strong>, do canal Sobrevivendo à Tecnologia.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Há mais de 15 anos recupero equipamentos que "técnicos" condenaram. Já peguei máquinas de 2008 que mal abriam o bloco de notas e as transformei em estações de estudo funcionais.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Criei o <strong>Notebook Ressuscitado</strong> porque cansei de ver gente gastando R$ 3.000 em notebook novo sem precisar, ou caindo na conversa de "formata que resolve" (e 2 semanas depois trava tudo de novo).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-gray-900 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl">
+                <div class="bg-brand-purple p-4 text-center">
+                    <p class="text-white font-medium text-sm tracking-wide">OFERTA DE LANÇAMENTO</p>
+                </div>
+                <div class="p-8 md:p-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ressuscite seu Notebook Hoje</h2>
+                    <p class="text-gray-500 mb-8">Menos que o valor de uma pizza. Muito menos que um técnico.</p>
+                    
+                    <div class="flex justify-center items-baseline gap-2 mb-8">
+                        <span class="text-gray-400 text-xl line-through">R$ 97,00</span>
+                        <span class="text-5xl font-black text-brand-purple">R$ 47,90</span>
+                    </div>
+
+                    <ul class="text-left max-w-sm mx-auto space-y-4 mb-10 text-gray-600">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Acesso vitalício ao curso</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Guia de instalação passo a passo</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Lista de peças compatíveis</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-green-500 flex-shrink-0"></i>
+                            <span>Garantia de 7 dias incondicional</span>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="block w-full py-5 text-xl font-bold text-white bg-green-600 hover:bg-green-700 rounded-xl transition-all shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-1">
+                        COMPRAR AGORA - R$ 47,90
+                    </a>
+                    
+                    <p class="mt-4 text-xs text-gray-400 flex justify-center items-center gap-1">
+                        <i data-lucide="lock" class="w-3 h-3"></i> Pagamento 100% seguro via Hotmart/Eduzz
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Dúvidas Frequentes</h2>
+            
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden open:border-brand-purple">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-gray-900 list-none">
+                        <span>Meu notebook só tem 2GB de RAM. Funciona?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                        Sim! O foco do curso é justamente hardware limitado. Usamos distribuições Linux específicas (como Antix ou MX Linux) que consomem menos de 300MB de RAM ao iniciar, deixando o resto livre para você usar.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden open:border-brand-purple">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-gray-900 list-none">
+                        <span>Preciso ser técnico para fazer isso?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                        Não. O curso é desenhado para usuários comuns. Se você sabe usar um pendrive e seguir instruções em vídeo, você consegue. Não usamos termos complicados sem explicar.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden open:border-brand-purple">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-gray-900 list-none">
+                        <span>Tenho medo de abrir o notebook. É obrigatório?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                        Não é obrigatório. O Módulo 1 ensina a abrir para limpeza e upgrade, mas se você não quiser fazer upgrades físicos, pode pular direto para o Módulo 3 e apenas instalar o sistema Linux, o que já resolve 70% da lentidão.
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden open:border-brand-purple">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 font-medium text-gray-900 list-none">
+                        <span>Funciona para Desktop (PC de mesa)?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                        Sim, totalmente. A lógica de escolha do sistema, instalação e otimização é idêntica. Só muda a forma física de abrir o gabinete, mas o software é o mesmo.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <p class="font-medium text-white mb-4">Notebook Resurrection</p>
+            <p class="text-sm mb-8">© 2025 Sobrevivendo à Tecnologia. Todos os direitos reservados.</p>
+            <div class="flex justify-center gap-6 text-sm">
+                <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+                <a href="#" class="hover:text-white transition-colors">Política de Privacidade</a>
+                <a href="#" class="hover:text-white transition-colors">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
